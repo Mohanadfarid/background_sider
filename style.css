@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&family=Roboto:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-position: center center;
+  background-size: cover;
+  z-index: -10000;
+  transition: 0.5s ease;
+}
+
+body::before {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.705);
+  width: 100%;
+  height: 100vh;
+}
+
+.slides_container {
+  position: relative;
+  height: 70vh;
+  width: 70vw;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+  overflow: hidden;
+}
+
+.slide.active {
+  opacity: 1;
+  background-position: center center;
+  background-size: cover;
+}
+
+.slide {
+  position: absolute;
+  z-index: 2;
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  background-position: center center;
+  background-size: cover;
+  top: -15vh;
+  left: -15vw;
+  transition: 0.5s ease;
+}
+
+.btn {
+  cursor: pointer;
+  position: fixed;
+  width: 100px;
+  height: 50px;
+  border: 2px solid orange;
+  background-color: transparent;
+  font-size: 24px;
+  color: white;
+  padding: 12px;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+#left_btn {
+  left: calc(15vw - 75px);
+}
+
+#right_btn {
+  right: calc(15vw - 75px);
+}
